@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using timetableViewSpace;
-using timetablePresenterSpace;
 
 namespace timetable
 {
@@ -13,9 +12,6 @@ namespace timetable
         [STAThread]
         static void Main()
         {
-            timetableView timetableView = new timetableView();
-            timetablePresenter timetablePresenter = new timetablePresenter(timetableView);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new timetableView());
