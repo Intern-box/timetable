@@ -38,11 +38,12 @@
             this.cJuly = new System.Windows.Forms.MonthCalendar();
             this.cJune = new System.Windows.Forms.MonthCalendar();
             this.cMay = new System.Windows.Forms.MonthCalendar();
-            this.cNewJen = new System.Windows.Forms.MonthCalendar();
             this.cDec = new System.Windows.Forms.MonthCalendar();
             this.cNov = new System.Windows.Forms.MonthCalendar();
             this.cOct = new System.Windows.Forms.MonthCalendar();
+            this.cSen = new System.Windows.Forms.MonthCalendar();
             this.button1 = new System.Windows.Forms.Button();
+            this.cNewJen = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // tYear
@@ -137,41 +138,41 @@
             this.cMay.ShowToday = false;
             this.cMay.TabIndex = 7;
             // 
-            // cNewJen
-            // 
-            this.cNewJen.Enabled = false;
-            this.cNewJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cNewJen.Location = new System.Drawing.Point(564, 407);
-            this.cNewJen.Name = "cNewJen";
-            this.cNewJen.ShowToday = false;
-            this.cNewJen.TabIndex = 14;
-            // 
             // cDec
             // 
             this.cDec.Enabled = false;
             this.cDec.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cDec.Location = new System.Drawing.Point(382, 407);
+            this.cDec.Location = new System.Drawing.Point(564, 407);
             this.cDec.Name = "cDec";
             this.cDec.ShowToday = false;
-            this.cDec.TabIndex = 13;
+            this.cDec.TabIndex = 14;
             // 
             // cNov
             // 
             this.cNov.Enabled = false;
             this.cNov.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cNov.Location = new System.Drawing.Point(200, 407);
+            this.cNov.Location = new System.Drawing.Point(382, 407);
             this.cNov.Name = "cNov";
             this.cNov.ShowToday = false;
-            this.cNov.TabIndex = 12;
+            this.cNov.TabIndex = 13;
             // 
             // cOct
             // 
             this.cOct.Enabled = false;
             this.cOct.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cOct.Location = new System.Drawing.Point(18, 407);
+            this.cOct.Location = new System.Drawing.Point(200, 407);
             this.cOct.Name = "cOct";
             this.cOct.ShowToday = false;
-            this.cOct.TabIndex = 11;
+            this.cOct.TabIndex = 12;
+            // 
+            // cSen
+            // 
+            this.cSen.Enabled = false;
+            this.cSen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cSen.Location = new System.Drawing.Point(18, 407);
+            this.cSen.Name = "cSen";
+            this.cSen.ShowToday = false;
+            this.cSen.TabIndex = 11;
             // 
             // button1
             // 
@@ -182,17 +183,28 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "посчитать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cNewJen
+            // 
+            this.cNewJen.Enabled = false;
+            this.cNewJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cNewJen.Location = new System.Drawing.Point(18, 590);
+            this.cNewJen.Name = "cNewJen";
+            this.cNewJen.ShowToday = false;
+            this.cNewJen.TabIndex = 15;
             // 
             // timetableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 591);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(748, 765);
             this.Controls.Add(this.cNewJen);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cDec);
             this.Controls.Add(this.cNov);
             this.Controls.Add(this.cOct);
+            this.Controls.Add(this.cSen);
             this.Controls.Add(this.cAug);
             this.Controls.Add(this.cJuly);
             this.Controls.Add(this.cJune);
@@ -226,11 +238,12 @@
         private System.Windows.Forms.MonthCalendar cJuly;
         private System.Windows.Forms.MonthCalendar cJune;
         private System.Windows.Forms.MonthCalendar cMay;
-        private System.Windows.Forms.MonthCalendar cNewJen;
         private System.Windows.Forms.MonthCalendar cDec;
         private System.Windows.Forms.MonthCalendar cNov;
         private System.Windows.Forms.MonthCalendar cOct;
+        private System.Windows.Forms.MonthCalendar cSen;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MonthCalendar cNewJen;
     }
 }
 
