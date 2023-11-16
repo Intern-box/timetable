@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace timetableViewSpace
 {
@@ -105,10 +106,11 @@ namespace timetableViewSpace
 
             cNewJen.TodayDate = new DateTime(year, month, 1);
 
-            month = 1;
+            cJen.BoldedDates = Calculate(year - 1, 1);
+        }
 
-            year--;
-
+        private DateTime[] Calculate(int year, int month)
+        {
             int count = 1;
 
             List<DateTime> dateTimes = new List<DateTime>();
@@ -125,7 +127,7 @@ namespace timetableViewSpace
                 }
             }
 
-            cJen.BoldedDates = dateTimes.ToArray();
+            return dateTimes.ToArray();
         }
     }
 }
