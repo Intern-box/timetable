@@ -15,7 +15,9 @@ namespace timetableViewSpace
 
             tYear.Text = DateTime.Now.Year.ToString();
 
+            //cJen.MaxDate = new DateTime(int.Parse(tYear.Text), 1, DateTime.DaysInMonth(int.Parse(tYear.Text), 1));
 
+            //cJen.TodayDate = new DateTime(int.Parse(tYear.Text), 1, 1);
         }
     }
 }

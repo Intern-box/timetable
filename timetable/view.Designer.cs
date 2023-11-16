@@ -42,6 +42,7 @@
             this.cDec = new System.Windows.Forms.MonthCalendar();
             this.cNov = new System.Windows.Forms.MonthCalendar();
             this.cOct = new System.Windows.Forms.MonthCalendar();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tYear
@@ -50,7 +51,7 @@
             this.tYear.Location = new System.Drawing.Point(54, 6);
             this.tYear.Name = "tYear";
             this.tYear.Size = new System.Drawing.Size(65, 23);
-            this.tYear.TabIndex = 0;
+            this.tYear.TabIndex = 1;
             this.tYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lYear
@@ -60,7 +61,7 @@
             this.lYear.Location = new System.Drawing.Point(12, 9);
             this.lYear.Name = "lYear";
             this.lYear.Size = new System.Drawing.Size(36, 16);
-            this.lYear.TabIndex = 1;
+            this.lYear.TabIndex = 0;
             this.lYear.Text = "Год:";
             // 
             // cJen
@@ -70,7 +71,8 @@
             this.cJen.Location = new System.Drawing.Point(18, 41);
             this.cJen.Name = "cJen";
             this.cJen.ShowToday = false;
-            this.cJen.TabIndex = 2;
+            this.cJen.TabIndex = 3;
+            this.cJen.TodayDate = new System.DateTime(2023, 11, 16, 0, 0, 0, 0);
             // 
             // cFeb
             // 
@@ -79,7 +81,7 @@
             this.cFeb.Location = new System.Drawing.Point(200, 41);
             this.cFeb.Name = "cFeb";
             this.cFeb.ShowToday = false;
-            this.cFeb.TabIndex = 3;
+            this.cFeb.TabIndex = 4;
             // 
             // cMarth
             // 
@@ -88,7 +90,7 @@
             this.cMarth.Location = new System.Drawing.Point(382, 41);
             this.cMarth.Name = "cMarth";
             this.cMarth.ShowToday = false;
-            this.cMarth.TabIndex = 4;
+            this.cMarth.TabIndex = 5;
             // 
             // cApr
             // 
@@ -97,7 +99,7 @@
             this.cApr.Location = new System.Drawing.Point(564, 41);
             this.cApr.Name = "cApr";
             this.cApr.ShowToday = false;
-            this.cApr.TabIndex = 5;
+            this.cApr.TabIndex = 6;
             // 
             // cAug
             // 
@@ -106,7 +108,7 @@
             this.cAug.Location = new System.Drawing.Point(564, 224);
             this.cAug.Name = "cAug";
             this.cAug.ShowToday = false;
-            this.cAug.TabIndex = 9;
+            this.cAug.TabIndex = 10;
             // 
             // cJuly
             // 
@@ -115,7 +117,7 @@
             this.cJuly.Location = new System.Drawing.Point(382, 224);
             this.cJuly.Name = "cJuly";
             this.cJuly.ShowToday = false;
-            this.cJuly.TabIndex = 8;
+            this.cJuly.TabIndex = 9;
             // 
             // cJune
             // 
@@ -124,7 +126,7 @@
             this.cJune.Location = new System.Drawing.Point(200, 224);
             this.cJune.Name = "cJune";
             this.cJune.ShowToday = false;
-            this.cJune.TabIndex = 7;
+            this.cJune.TabIndex = 8;
             // 
             // cMay
             // 
@@ -133,7 +135,7 @@
             this.cMay.Location = new System.Drawing.Point(18, 224);
             this.cMay.Name = "cMay";
             this.cMay.ShowToday = false;
-            this.cMay.TabIndex = 6;
+            this.cMay.TabIndex = 7;
             // 
             // cNewJen
             // 
@@ -142,7 +144,7 @@
             this.cNewJen.Location = new System.Drawing.Point(564, 407);
             this.cNewJen.Name = "cNewJen";
             this.cNewJen.ShowToday = false;
-            this.cNewJen.TabIndex = 13;
+            this.cNewJen.TabIndex = 14;
             // 
             // cDec
             // 
@@ -151,7 +153,7 @@
             this.cDec.Location = new System.Drawing.Point(382, 407);
             this.cDec.Name = "cDec";
             this.cDec.ShowToday = false;
-            this.cDec.TabIndex = 12;
+            this.cDec.TabIndex = 13;
             // 
             // cNov
             // 
@@ -160,7 +162,7 @@
             this.cNov.Location = new System.Drawing.Point(200, 407);
             this.cNov.Name = "cNov";
             this.cNov.ShowToday = false;
-            this.cNov.TabIndex = 11;
+            this.cNov.TabIndex = 12;
             // 
             // cOct
             // 
@@ -169,13 +171,24 @@
             this.cOct.Location = new System.Drawing.Point(18, 407);
             this.cOct.Name = "cOct";
             this.cOct.ShowToday = false;
-            this.cOct.TabIndex = 10;
+            this.cOct.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(125, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "посчитать";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // timetableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 591);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cNewJen);
             this.Controls.Add(this.cDec);
             this.Controls.Add(this.cNov);
@@ -217,6 +230,7 @@
         private System.Windows.Forms.MonthCalendar cDec;
         private System.Windows.Forms.MonthCalendar cNov;
         private System.Windows.Forms.MonthCalendar cOct;
+        private System.Windows.Forms.Button button1;
     }
 }
 
