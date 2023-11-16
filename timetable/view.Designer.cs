@@ -72,6 +72,7 @@
             this.cJen.Location = new System.Drawing.Point(18, 41);
             this.cJen.Name = "cJen";
             this.cJen.ShowToday = false;
+            this.cJen.ShowTodayCircle = false;
             this.cJen.TabIndex = 3;
             this.cJen.TodayDate = new System.DateTime(2024, 1, 18, 0, 0, 0, 0);
             // 
@@ -82,6 +83,7 @@
             this.cFeb.Location = new System.Drawing.Point(200, 41);
             this.cFeb.Name = "cFeb";
             this.cFeb.ShowToday = false;
+            this.cFeb.ShowTodayCircle = false;
             this.cFeb.TabIndex = 4;
             // 
             // cMarch
@@ -91,6 +93,7 @@
             this.cMarch.Location = new System.Drawing.Point(382, 41);
             this.cMarch.Name = "cMarch";
             this.cMarch.ShowToday = false;
+            this.cMarch.ShowTodayCircle = false;
             this.cMarch.TabIndex = 5;
             // 
             // cApr
@@ -100,6 +103,7 @@
             this.cApr.Location = new System.Drawing.Point(564, 41);
             this.cApr.Name = "cApr";
             this.cApr.ShowToday = false;
+            this.cApr.ShowTodayCircle = false;
             this.cApr.TabIndex = 6;
             // 
             // cAug
@@ -109,6 +113,7 @@
             this.cAug.Location = new System.Drawing.Point(564, 224);
             this.cAug.Name = "cAug";
             this.cAug.ShowToday = false;
+            this.cAug.ShowTodayCircle = false;
             this.cAug.TabIndex = 10;
             // 
             // cJuly
@@ -118,6 +123,7 @@
             this.cJuly.Location = new System.Drawing.Point(382, 224);
             this.cJuly.Name = "cJuly";
             this.cJuly.ShowToday = false;
+            this.cJuly.ShowTodayCircle = false;
             this.cJuly.TabIndex = 9;
             // 
             // cJune
@@ -127,6 +133,7 @@
             this.cJune.Location = new System.Drawing.Point(200, 224);
             this.cJune.Name = "cJune";
             this.cJune.ShowToday = false;
+            this.cJune.ShowTodayCircle = false;
             this.cJune.TabIndex = 8;
             // 
             // cMay
@@ -136,6 +143,7 @@
             this.cMay.Location = new System.Drawing.Point(18, 224);
             this.cMay.Name = "cMay";
             this.cMay.ShowToday = false;
+            this.cMay.ShowTodayCircle = false;
             this.cMay.TabIndex = 7;
             // 
             // cDec
@@ -145,6 +153,7 @@
             this.cDec.Location = new System.Drawing.Point(564, 407);
             this.cDec.Name = "cDec";
             this.cDec.ShowToday = false;
+            this.cDec.ShowTodayCircle = false;
             this.cDec.TabIndex = 14;
             // 
             // cNov
@@ -154,6 +163,7 @@
             this.cNov.Location = new System.Drawing.Point(382, 407);
             this.cNov.Name = "cNov";
             this.cNov.ShowToday = false;
+            this.cNov.ShowTodayCircle = false;
             this.cNov.TabIndex = 13;
             this.cNov.TabStop = false;
             // 
@@ -164,6 +174,7 @@
             this.cOct.Location = new System.Drawing.Point(200, 407);
             this.cOct.Name = "cOct";
             this.cOct.ShowToday = false;
+            this.cOct.ShowTodayCircle = false;
             this.cOct.TabIndex = 12;
             // 
             // cSep
@@ -173,6 +184,7 @@
             this.cSep.Location = new System.Drawing.Point(18, 407);
             this.cSep.Name = "cSep";
             this.cSep.ShowToday = false;
+            this.cSep.ShowTodayCircle = false;
             this.cSep.TabIndex = 11;
             // 
             // bCalc
@@ -193,6 +205,7 @@
             this.cNewJen.Location = new System.Drawing.Point(18, 590);
             this.cNewJen.Name = "cNewJen";
             this.cNewJen.ShowToday = false;
+            this.cNewJen.ShowTodayCircle = false;
             this.cNewJen.TabIndex = 15;
             // 
             // timetableView
