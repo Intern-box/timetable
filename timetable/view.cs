@@ -13,6 +13,10 @@ namespace timetableViewSpace
 
         int year;
 
+        int firstWorkDay = 1;
+
+        int lastDayInMonth = 1;
+
         public timetableView()
         {
             InitializeComponent();
@@ -106,24 +110,66 @@ namespace timetableViewSpace
 
             cNewJen.TodayDate = new DateTime(year, month, 1);
 
-            cJen.BoldedDates = Calculate(year - 1, 1);
+            year--;
+
+            cJen.BoldedDates = Calculate(year, 1);
+
+            cFeb.BoldedDates = Calculate(year, 2);
+
+            cMarch.BoldedDates = Calculate(year, 3);
+
+            cApr.BoldedDates = Calculate(year, 4);
+
+            cMay.BoldedDates = Calculate(year, 5);
+
+            cJune.BoldedDates = Calculate(year, 6);
+
+            cJuly.BoldedDates = Calculate(year, 7);
+
+            cAug.BoldedDates = Calculate(year, 8);
+
+            cSep.BoldedDates = Calculate(year, 9);
+
+            cOct.BoldedDates = Calculate(year, 10);
+
+            cNov.BoldedDates = Calculate(year, 11);
+
+            cDec.BoldedDates = Calculate(year, 12);
+
+            year++;
+
+            cNewJen.BoldedDates = Calculate(year, 1);
         }
 
         private DateTime[] Calculate(int year, int month)
         {
-            int count = 1;
+            if (month != 2)
+            {
+                firstWorkDay = lastDayInMonth == 30 ? 2 : 1;
+            }
+            else
+            {
+                switch (lastDayInMonth)
+                {
+                    case 28: firstWorkDay = 2; break;
+
+                    case 29: firstWorkDay = 2; break;
+                }
+            }
 
             List<DateTime> dateTimes = new List<DateTime>();
 
             for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
             {
-                if (j == count)
+                if (j == firstWorkDay)
                 {
                     dateTimes.Add(new DateTime(year, month, j));
 
                     dateTimes.Add(new DateTime(year, month, j + 1));
 
-                    count += 4;
+                    lastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
+
+                    firstWorkDay += 4;
                 }
             }
 
