@@ -32,7 +32,7 @@
             this.lYear = new System.Windows.Forms.Label();
             this.cJen = new System.Windows.Forms.MonthCalendar();
             this.cFeb = new System.Windows.Forms.MonthCalendar();
-            this.cMarth = new System.Windows.Forms.MonthCalendar();
+            this.cMarch = new System.Windows.Forms.MonthCalendar();
             this.cApr = new System.Windows.Forms.MonthCalendar();
             this.cAug = new System.Windows.Forms.MonthCalendar();
             this.cJuly = new System.Windows.Forms.MonthCalendar();
@@ -41,8 +41,8 @@
             this.cDec = new System.Windows.Forms.MonthCalendar();
             this.cNov = new System.Windows.Forms.MonthCalendar();
             this.cOct = new System.Windows.Forms.MonthCalendar();
-            this.cSen = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cSep = new System.Windows.Forms.MonthCalendar();
+            this.bCalc = new System.Windows.Forms.Button();
             this.cNewJen = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             this.cJen.Name = "cJen";
             this.cJen.ShowToday = false;
             this.cJen.TabIndex = 3;
-            this.cJen.TodayDate = new System.DateTime(2023, 11, 16, 0, 0, 0, 0);
+            this.cJen.TodayDate = new System.DateTime(2024, 1, 18, 0, 0, 0, 0);
             // 
             // cFeb
             // 
@@ -84,14 +84,14 @@
             this.cFeb.ShowToday = false;
             this.cFeb.TabIndex = 4;
             // 
-            // cMarth
+            // cMarch
             // 
-            this.cMarth.Enabled = false;
-            this.cMarth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cMarth.Location = new System.Drawing.Point(382, 41);
-            this.cMarth.Name = "cMarth";
-            this.cMarth.ShowToday = false;
-            this.cMarth.TabIndex = 5;
+            this.cMarch.Enabled = false;
+            this.cMarch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cMarch.Location = new System.Drawing.Point(382, 41);
+            this.cMarch.Name = "cMarch";
+            this.cMarch.ShowToday = false;
+            this.cMarch.TabIndex = 5;
             // 
             // cApr
             // 
@@ -155,6 +155,7 @@
             this.cNov.Name = "cNov";
             this.cNov.ShowToday = false;
             this.cNov.TabIndex = 13;
+            this.cNov.TabStop = false;
             // 
             // cOct
             // 
@@ -165,25 +166,25 @@
             this.cOct.ShowToday = false;
             this.cOct.TabIndex = 12;
             // 
-            // cSen
+            // cSep
             // 
-            this.cSen.Enabled = false;
-            this.cSen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cSen.Location = new System.Drawing.Point(18, 407);
-            this.cSen.Name = "cSen";
-            this.cSen.ShowToday = false;
-            this.cSen.TabIndex = 11;
+            this.cSep.Enabled = false;
+            this.cSep.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cSep.Location = new System.Drawing.Point(18, 407);
+            this.cSep.Name = "cSep";
+            this.cSep.ShowToday = false;
+            this.cSep.TabIndex = 11;
             // 
-            // button1
+            // bCalc
             // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(125, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "посчитать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bCalc.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bCalc.Location = new System.Drawing.Point(125, 6);
+            this.bCalc.Name = "bCalc";
+            this.bCalc.Size = new System.Drawing.Size(85, 23);
+            this.bCalc.TabIndex = 2;
+            this.bCalc.Text = "посчитать";
+            this.bCalc.UseVisualStyleBackColor = true;
+            this.bCalc.Click += new System.EventHandler(this.button1_Click);
             // 
             // cNewJen
             // 
@@ -200,17 +201,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 765);
             this.Controls.Add(this.cNewJen);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bCalc);
             this.Controls.Add(this.cDec);
             this.Controls.Add(this.cNov);
             this.Controls.Add(this.cOct);
-            this.Controls.Add(this.cSen);
+            this.Controls.Add(this.cSep);
             this.Controls.Add(this.cAug);
             this.Controls.Add(this.cJuly);
             this.Controls.Add(this.cJune);
             this.Controls.Add(this.cMay);
             this.Controls.Add(this.cApr);
-            this.Controls.Add(this.cMarth);
+            this.Controls.Add(this.cMarch);
             this.Controls.Add(this.cFeb);
             this.Controls.Add(this.cJen);
             this.Controls.Add(this.lYear);
@@ -232,7 +233,7 @@
         private System.Windows.Forms.Label lYear;
         private System.Windows.Forms.MonthCalendar cJen;
         private System.Windows.Forms.MonthCalendar cFeb;
-        private System.Windows.Forms.MonthCalendar cMarth;
+        private System.Windows.Forms.MonthCalendar cMarch;
         private System.Windows.Forms.MonthCalendar cApr;
         private System.Windows.Forms.MonthCalendar cAug;
         private System.Windows.Forms.MonthCalendar cJuly;
@@ -241,8 +242,8 @@
         private System.Windows.Forms.MonthCalendar cDec;
         private System.Windows.Forms.MonthCalendar cNov;
         private System.Windows.Forms.MonthCalendar cOct;
-        private System.Windows.Forms.MonthCalendar cSen;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MonthCalendar cSep;
+        private System.Windows.Forms.Button bCalc;
         private System.Windows.Forms.MonthCalendar cNewJen;
     }
 }
