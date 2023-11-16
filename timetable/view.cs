@@ -14,6 +14,8 @@ namespace timetableViewSpace
             InitializeComponent();
 
             tYear.Text = DateTime.Now.Year.ToString();
+
+
         }
     }
 }

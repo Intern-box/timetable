@@ -30,7 +30,7 @@
         {
             this.tYear = new System.Windows.Forms.TextBox();
             this.lYear = new System.Windows.Forms.Label();
-            this.сJen = new System.Windows.Forms.MonthCalendar();
+            this.cJen = new System.Windows.Forms.MonthCalendar();
             this.cFeb = new System.Windows.Forms.MonthCalendar();
             this.cMarth = new System.Windows.Forms.MonthCalendar();
             this.cApr = new System.Windows.Forms.MonthCalendar();
@@ -63,14 +63,14 @@
             this.lYear.TabIndex = 1;
             this.lYear.Text = "Год:";
             // 
-            // сJen
+            // cJen
             // 
-            this.сJen.Enabled = false;
-            this.сJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.сJen.Location = new System.Drawing.Point(18, 41);
-            this.сJen.Name = "сJen";
-            this.сJen.ShowToday = false;
-            this.сJen.TabIndex = 2;
+            this.cJen.Enabled = false;
+            this.cJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cJen.Location = new System.Drawing.Point(18, 41);
+            this.cJen.Name = "cJen";
+            this.cJen.ShowToday = false;
+            this.cJen.TabIndex = 2;
             // 
             // cFeb
             // 
@@ -187,7 +187,7 @@
             this.Controls.Add(this.cApr);
             this.Controls.Add(this.cMarth);
             this.Controls.Add(this.cFeb);
-            this.Controls.Add(this.сJen);
+            this.Controls.Add(this.cJen);
             this.Controls.Add(this.lYear);
             this.Controls.Add(this.tYear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -205,7 +205,7 @@
 
         private System.Windows.Forms.TextBox tYear;
         private System.Windows.Forms.Label lYear;
-        private System.Windows.Forms.MonthCalendar сJen;
+        private System.Windows.Forms.MonthCalendar cJen;
         private System.Windows.Forms.MonthCalendar cFeb;
         private System.Windows.Forms.MonthCalendar cMarth;
         private System.Windows.Forms.MonthCalendar cApr;
