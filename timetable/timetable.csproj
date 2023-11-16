@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model.cs" />
-    <Compile Include="presenter.cs" />
     <Compile Include="view.cs">
       <SubType>Form</SubType>
     </Compile>
