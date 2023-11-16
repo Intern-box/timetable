@@ -31,17 +31,17 @@
             this.tYear = new System.Windows.Forms.TextBox();
             this.lYear = new System.Windows.Forms.Label();
             this.сJen = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar4 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar5 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar6 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar7 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar8 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar9 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar10 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar11 = new System.Windows.Forms.MonthCalendar();
+            this.cFeb = new System.Windows.Forms.MonthCalendar();
+            this.cMarth = new System.Windows.Forms.MonthCalendar();
+            this.cApr = new System.Windows.Forms.MonthCalendar();
+            this.cAug = new System.Windows.Forms.MonthCalendar();
+            this.cJuly = new System.Windows.Forms.MonthCalendar();
+            this.cJune = new System.Windows.Forms.MonthCalendar();
+            this.cMay = new System.Windows.Forms.MonthCalendar();
+            this.cNewJen = new System.Windows.Forms.MonthCalendar();
+            this.cDec = new System.Windows.Forms.MonthCalendar();
+            this.cNov = new System.Windows.Forms.MonthCalendar();
+            this.cOct = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // tYear
@@ -72,121 +72,121 @@
             this.сJen.ShowToday = false;
             this.сJen.TabIndex = 2;
             // 
-            // monthCalendar1
+            // cFeb
             // 
-            this.monthCalendar1.Enabled = false;
-            this.monthCalendar1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar1.Location = new System.Drawing.Point(200, 41);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.ShowToday = false;
-            this.monthCalendar1.TabIndex = 3;
+            this.cFeb.Enabled = false;
+            this.cFeb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cFeb.Location = new System.Drawing.Point(200, 41);
+            this.cFeb.Name = "cFeb";
+            this.cFeb.ShowToday = false;
+            this.cFeb.TabIndex = 3;
             // 
-            // monthCalendar2
+            // cMarth
             // 
-            this.monthCalendar2.Enabled = false;
-            this.monthCalendar2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar2.Location = new System.Drawing.Point(382, 41);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.ShowToday = false;
-            this.monthCalendar2.TabIndex = 4;
+            this.cMarth.Enabled = false;
+            this.cMarth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cMarth.Location = new System.Drawing.Point(382, 41);
+            this.cMarth.Name = "cMarth";
+            this.cMarth.ShowToday = false;
+            this.cMarth.TabIndex = 4;
             // 
-            // monthCalendar3
+            // cApr
             // 
-            this.monthCalendar3.Enabled = false;
-            this.monthCalendar3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar3.Location = new System.Drawing.Point(564, 41);
-            this.monthCalendar3.Name = "monthCalendar3";
-            this.monthCalendar3.ShowToday = false;
-            this.monthCalendar3.TabIndex = 5;
+            this.cApr.Enabled = false;
+            this.cApr.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cApr.Location = new System.Drawing.Point(564, 41);
+            this.cApr.Name = "cApr";
+            this.cApr.ShowToday = false;
+            this.cApr.TabIndex = 5;
             // 
-            // monthCalendar4
+            // cAug
             // 
-            this.monthCalendar4.Enabled = false;
-            this.monthCalendar4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar4.Location = new System.Drawing.Point(564, 224);
-            this.monthCalendar4.Name = "monthCalendar4";
-            this.monthCalendar4.ShowToday = false;
-            this.monthCalendar4.TabIndex = 9;
+            this.cAug.Enabled = false;
+            this.cAug.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cAug.Location = new System.Drawing.Point(564, 224);
+            this.cAug.Name = "cAug";
+            this.cAug.ShowToday = false;
+            this.cAug.TabIndex = 9;
             // 
-            // monthCalendar5
+            // cJuly
             // 
-            this.monthCalendar5.Enabled = false;
-            this.monthCalendar5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar5.Location = new System.Drawing.Point(382, 224);
-            this.monthCalendar5.Name = "monthCalendar5";
-            this.monthCalendar5.ShowToday = false;
-            this.monthCalendar5.TabIndex = 8;
+            this.cJuly.Enabled = false;
+            this.cJuly.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cJuly.Location = new System.Drawing.Point(382, 224);
+            this.cJuly.Name = "cJuly";
+            this.cJuly.ShowToday = false;
+            this.cJuly.TabIndex = 8;
             // 
-            // monthCalendar6
+            // cJune
             // 
-            this.monthCalendar6.Enabled = false;
-            this.monthCalendar6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar6.Location = new System.Drawing.Point(200, 224);
-            this.monthCalendar6.Name = "monthCalendar6";
-            this.monthCalendar6.ShowToday = false;
-            this.monthCalendar6.TabIndex = 7;
+            this.cJune.Enabled = false;
+            this.cJune.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cJune.Location = new System.Drawing.Point(200, 224);
+            this.cJune.Name = "cJune";
+            this.cJune.ShowToday = false;
+            this.cJune.TabIndex = 7;
             // 
-            // monthCalendar7
+            // cMay
             // 
-            this.monthCalendar7.Enabled = false;
-            this.monthCalendar7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar7.Location = new System.Drawing.Point(18, 224);
-            this.monthCalendar7.Name = "monthCalendar7";
-            this.monthCalendar7.ShowToday = false;
-            this.monthCalendar7.TabIndex = 6;
+            this.cMay.Enabled = false;
+            this.cMay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cMay.Location = new System.Drawing.Point(18, 224);
+            this.cMay.Name = "cMay";
+            this.cMay.ShowToday = false;
+            this.cMay.TabIndex = 6;
             // 
-            // monthCalendar8
+            // cNewJen
             // 
-            this.monthCalendar8.Enabled = false;
-            this.monthCalendar8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar8.Location = new System.Drawing.Point(564, 407);
-            this.monthCalendar8.Name = "monthCalendar8";
-            this.monthCalendar8.ShowToday = false;
-            this.monthCalendar8.TabIndex = 13;
+            this.cNewJen.Enabled = false;
+            this.cNewJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cNewJen.Location = new System.Drawing.Point(564, 407);
+            this.cNewJen.Name = "cNewJen";
+            this.cNewJen.ShowToday = false;
+            this.cNewJen.TabIndex = 13;
             // 
-            // monthCalendar9
+            // cDec
             // 
-            this.monthCalendar9.Enabled = false;
-            this.monthCalendar9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar9.Location = new System.Drawing.Point(382, 407);
-            this.monthCalendar9.Name = "monthCalendar9";
-            this.monthCalendar9.ShowToday = false;
-            this.monthCalendar9.TabIndex = 12;
+            this.cDec.Enabled = false;
+            this.cDec.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cDec.Location = new System.Drawing.Point(382, 407);
+            this.cDec.Name = "cDec";
+            this.cDec.ShowToday = false;
+            this.cDec.TabIndex = 12;
             // 
-            // monthCalendar10
+            // cNov
             // 
-            this.monthCalendar10.Enabled = false;
-            this.monthCalendar10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar10.Location = new System.Drawing.Point(200, 407);
-            this.monthCalendar10.Name = "monthCalendar10";
-            this.monthCalendar10.ShowToday = false;
-            this.monthCalendar10.TabIndex = 11;
+            this.cNov.Enabled = false;
+            this.cNov.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cNov.Location = new System.Drawing.Point(200, 407);
+            this.cNov.Name = "cNov";
+            this.cNov.ShowToday = false;
+            this.cNov.TabIndex = 11;
             // 
-            // monthCalendar11
+            // cOct
             // 
-            this.monthCalendar11.Enabled = false;
-            this.monthCalendar11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar11.Location = new System.Drawing.Point(18, 407);
-            this.monthCalendar11.Name = "monthCalendar11";
-            this.monthCalendar11.ShowToday = false;
-            this.monthCalendar11.TabIndex = 10;
+            this.cOct.Enabled = false;
+            this.cOct.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cOct.Location = new System.Drawing.Point(18, 407);
+            this.cOct.Name = "cOct";
+            this.cOct.ShowToday = false;
+            this.cOct.TabIndex = 10;
             // 
             // timetableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 591);
-            this.Controls.Add(this.monthCalendar8);
-            this.Controls.Add(this.monthCalendar9);
-            this.Controls.Add(this.monthCalendar10);
-            this.Controls.Add(this.monthCalendar11);
-            this.Controls.Add(this.monthCalendar4);
-            this.Controls.Add(this.monthCalendar5);
-            this.Controls.Add(this.monthCalendar6);
-            this.Controls.Add(this.monthCalendar7);
-            this.Controls.Add(this.monthCalendar3);
-            this.Controls.Add(this.monthCalendar2);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.cNewJen);
+            this.Controls.Add(this.cDec);
+            this.Controls.Add(this.cNov);
+            this.Controls.Add(this.cOct);
+            this.Controls.Add(this.cAug);
+            this.Controls.Add(this.cJuly);
+            this.Controls.Add(this.cJune);
+            this.Controls.Add(this.cMay);
+            this.Controls.Add(this.cApr);
+            this.Controls.Add(this.cMarth);
+            this.Controls.Add(this.cFeb);
             this.Controls.Add(this.сJen);
             this.Controls.Add(this.lYear);
             this.Controls.Add(this.tYear);
@@ -206,17 +206,17 @@
         private System.Windows.Forms.TextBox tYear;
         private System.Windows.Forms.Label lYear;
         private System.Windows.Forms.MonthCalendar сJen;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
-        private System.Windows.Forms.MonthCalendar monthCalendar3;
-        private System.Windows.Forms.MonthCalendar monthCalendar4;
-        private System.Windows.Forms.MonthCalendar monthCalendar5;
-        private System.Windows.Forms.MonthCalendar monthCalendar6;
-        private System.Windows.Forms.MonthCalendar monthCalendar7;
-        private System.Windows.Forms.MonthCalendar monthCalendar8;
-        private System.Windows.Forms.MonthCalendar monthCalendar9;
-        private System.Windows.Forms.MonthCalendar monthCalendar10;
-        private System.Windows.Forms.MonthCalendar monthCalendar11;
+        private System.Windows.Forms.MonthCalendar cFeb;
+        private System.Windows.Forms.MonthCalendar cMarth;
+        private System.Windows.Forms.MonthCalendar cApr;
+        private System.Windows.Forms.MonthCalendar cAug;
+        private System.Windows.Forms.MonthCalendar cJuly;
+        private System.Windows.Forms.MonthCalendar cJune;
+        private System.Windows.Forms.MonthCalendar cMay;
+        private System.Windows.Forms.MonthCalendar cNewJen;
+        private System.Windows.Forms.MonthCalendar cDec;
+        private System.Windows.Forms.MonthCalendar cNov;
+        private System.Windows.Forms.MonthCalendar cOct;
     }
 }
 
