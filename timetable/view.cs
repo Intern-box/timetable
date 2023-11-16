@@ -13,7 +13,7 @@ namespace timetableViewSpace
 
         int year;
 
-        int firstWorkDay = 1;
+        int firstWorkDay;
 
         int lastDayInMonth = 1;
 
@@ -22,6 +22,8 @@ namespace timetableViewSpace
             InitializeComponent();
 
             tYear.Text = DateTime.Now.Year.ToString();
+
+            tDay.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +31,8 @@ namespace timetableViewSpace
             month = 0;
 
             year = int.Parse(tYear.Text);
+
+            firstWorkDay = int.Parse(tDay.Text);
 
             month++;
 
@@ -143,20 +147,6 @@ namespace timetableViewSpace
 
         private DateTime[] Calculate(int year, int month)
         {
-            if (month != 2)
-            {
-                firstWorkDay = lastDayInMonth == 30 ? 2 : 1;
-            }
-            else
-            {
-                switch (lastDayInMonth)
-                {
-                    case 28: firstWorkDay = 2; break;
-
-                    case 29: firstWorkDay = 2; break;
-                }
-            }
-
             List<DateTime> dateTimes = new List<DateTime>();
 
             for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
@@ -170,6 +160,29 @@ namespace timetableViewSpace
                     lastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
 
                     firstWorkDay += 4;
+                }
+            }
+
+            if (month != 2)
+            {
+                switch (lastDayInMonth)
+                {
+                    case 30: firstWorkDay = 2; break;
+
+                    case 31: firstWorkDay = 3; break;
+
+                    default: firstWorkDay = 1; break;
+                }
+            }
+            else
+            {
+                switch (lastDayInMonth)
+                {
+                    case 28: firstWorkDay = 2; break;
+
+                    case 29: firstWorkDay = 3; break;
+
+                    default: firstWorkDay = 1; break;
                 }
             }
 
