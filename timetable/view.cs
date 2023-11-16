@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
@@ -102,6 +104,28 @@ namespace timetableViewSpace
             cNewJen.MaxDate = cNewJen.SelectionStart = cNewJen.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
 
             cNewJen.TodayDate = new DateTime(year, month, 1);
+
+            month = 1;
+
+            year--;
+
+            int count = 1;
+
+            List<DateTime> dateTimes = new List<DateTime>();
+
+            for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
+            {
+                if (j == count)
+                {
+                    dateTimes.Add(new DateTime(year, month, j));
+
+                    dateTimes.Add(new DateTime(year, month, j + 1));
+
+                    count += 4;
+                }
+            }
+
+            cJen.BoldedDates = dateTimes.ToArray();
         }
     }
 }
