@@ -15,7 +15,7 @@ namespace timetableViewSpace
 
         int firstWorkDay;
 
-        int lastDayInMonth = 1;
+        int lastDayInMonth;
 
         public timetableView()
         {
@@ -26,7 +26,7 @@ namespace timetableViewSpace
             tDay.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bCalc_Click(object sender, EventArgs e)
         {
             month = 0;
 
@@ -147,6 +147,40 @@ namespace timetableViewSpace
 
         private DateTime[] Calculate(int year, int month)
         {
+            lastDayInMonth = DateTime.DaysInMonth(year, month);
+
+            if (month == 2)
+            {
+                if (DateTime.IsLeapYear(year))
+                {
+                    switch (lastDayInMonth)
+                    {
+                        case 28: firstWorkDay = 1; break;
+
+                        case 29: firstWorkDay = 2; break;
+                    }
+                }
+                else
+                {
+                    switch (lastDayInMonth)
+                    {
+                        case 27: firstWorkDay = 1; break;
+
+                        case 28: firstWorkDay = 2; break;
+                    }
+                }
+            }
+
+            if (month != 1)
+            {
+                switch (lastDayInMonth)
+                {
+                    case 30: firstWorkDay = 1; break;
+
+                    case 31: firstWorkDay = 2; break;
+                }
+            }
+
             List<DateTime> dateTimes = new List<DateTime>();
 
             for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
@@ -160,29 +194,6 @@ namespace timetableViewSpace
                     lastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
 
                     firstWorkDay += 4;
-                }
-            }
-
-            if (month != 2)
-            {
-                switch (lastDayInMonth)
-                {
-                    case 30: firstWorkDay = 2; break;
-
-                    case 31: firstWorkDay = 3; break;
-
-                    default: firstWorkDay = 1; break;
-                }
-            }
-            else
-            {
-                switch (lastDayInMonth)
-                {
-                    case 28: firstWorkDay = 2; break;
-
-                    case 29: firstWorkDay = 3; break;
-
-                    default: firstWorkDay = 1; break;
                 }
             }
 
