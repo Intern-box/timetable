@@ -42,7 +42,6 @@
             this.cOct = new System.Windows.Forms.MonthCalendar();
             this.cSep = new System.Windows.Forms.MonthCalendar();
             this.bCalc = new System.Windows.Forms.Button();
-            this.cNewJen = new System.Windows.Forms.MonthCalendar();
             this.tYear = new System.Windows.Forms.ComboBox();
             this.tDay = new System.Windows.Forms.ComboBox();
             this.lDay = new System.Windows.Forms.Label();
@@ -191,16 +190,6 @@
             this.bCalc.UseVisualStyleBackColor = true;
             this.bCalc.Click += new System.EventHandler(this.bCalc_Click);
             // 
-            // cNewJen
-            // 
-            this.cNewJen.Enabled = false;
-            this.cNewJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cNewJen.Location = new System.Drawing.Point(18, 590);
-            this.cNewJen.Name = "cNewJen";
-            this.cNewJen.ShowToday = false;
-            this.cNewJen.ShowTodayCircle = false;
-            this.cNewJen.TabIndex = 15;
-            // 
             // tYear
             // 
             this.tYear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -276,11 +265,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 765);
+            this.ClientSize = new System.Drawing.Size(748, 579);
             this.Controls.Add(this.lDay);
             this.Controls.Add(this.tDay);
             this.Controls.Add(this.tYear);
-            this.Controls.Add(this.cNewJen);
             this.Controls.Add(this.bCalc);
             this.Controls.Add(this.cDec);
             this.Controls.Add(this.cNov);
@@ -321,7 +309,6 @@
         private System.Windows.Forms.MonthCalendar cOct;
         private System.Windows.Forms.MonthCalendar cSep;
         private System.Windows.Forms.Button bCalc;
-        private System.Windows.Forms.MonthCalendar cNewJen;
         private System.Windows.Forms.ComboBox tYear;
         private System.Windows.Forms.ComboBox tDay;
         private System.Windows.Forms.Label lDay;
