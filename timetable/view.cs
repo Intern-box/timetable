@@ -6,15 +6,15 @@ namespace timetableViewSpace
 {
     public partial class TimeTableView : Form
     {
-        List<MonthCalendar> monthCalendars;
+        List<MonthCalendar> MonthCalendars;
 
-        int year;
+        int Year;
 
-        int month;
+        int Month;
 
-        int firstWorkDay;
+        int FirstWorkDay;
 
-        int lastDayInMonth;
+        int LastDayInMonth;
 
         public TimeTableView()
         {
@@ -22,106 +22,60 @@ namespace timetableViewSpace
 
             tYear.Text = DateTime.Now.Year.ToString();
 
-            tDay.SelectedIndex = 0;
+            tMonth.SelectedIndex = tDay.SelectedIndex = 0;
 
-            tMonth.SelectedIndex = 0;
-
-            monthCalendars.Add(cJen);
-
-            monthCalendars.Add(cFeb);
-
-            monthCalendars.Add(cMarch);
-
-            monthCalendars.Add(cApr);
-
-            monthCalendars.Add(cMay);
-
-            monthCalendars.Add(cJune);
-
-            monthCalendars.Add(cJuly);
-
-            monthCalendars.Add(cAug);
-
-            monthCalendars.Add(cSep);
-
-            monthCalendars.Add(cOct);
-
-            monthCalendars.Add(cNov);
-
-            monthCalendars.Add(cDec);
+            MonthCalendars = new List<MonthCalendar> { cJan, cFeb, cMarch, cApr, cMay, cJune, cJuly, cAug, cSep, cOct, cNov, cDec };
 
             Calendars(DateTime.Now.Year);
         }
 
         private void bCalc_Click(object sender, EventArgs e)
         {
-            year = int.Parse(tYear.Text);
+            Year = int.Parse(tYear.Text);
 
-            month = int.Parse(tMonth.Text);
+            Month = int.Parse(tMonth.Text);
 
-            firstWorkDay = int.Parse(tDay.Text);
+            FirstWorkDay = int.Parse(tDay.Text);
 
-            switch (month)
+            for (int i = Month - 1; i < tMonth.Items.Count; i++)
             {
-                case 1: cJen.BoldedDates = Calculate(year, month); break;
-
-                case 2: cFeb.BoldedDates = Calculate(year, month); break;
-
-                case 3: cMarch.BoldedDates = Calculate(year, month); break;
-
-                case 4: cApr.BoldedDates = Calculate(year, month); break;
-
-                case 5: cMay.BoldedDates = Calculate(year, month); break;
-
-                case 6: cJune.BoldedDates = Calculate(year, month); break;
-
-                case 7: cJuly.BoldedDates = Calculate(year, month); break;
-
-                case 8: cAug.BoldedDates = Calculate(year, month); break;
-
-                case 9: cSep.BoldedDates = Calculate(year, month); break;
-
-                case 10: cOct.BoldedDates = Calculate(year, month); break;
-
-                case 11: cNov.BoldedDates = Calculate(year, month); break;
-
-                case 12: cDec.BoldedDates = Calculate(year, month); break;
+                MonthCalendars[i].BoldedDates = Calculate(Year, Month); Month++;
             }
         }
 
         private DateTime[] Calculate(int year, int month)
         {
-            lastDayInMonth = DateTime.DaysInMonth(year, month);
+            LastDayInMonth = DateTime.DaysInMonth(year, month);
 
             if (month == 2)
             {
                 if (DateTime.IsLeapYear(year))
                 {
-                    switch (lastDayInMonth)
+                    switch (LastDayInMonth)
                     {
-                        case 28: firstWorkDay = 1; break;
+                        case 28: FirstWorkDay = 1; break;
 
-                        case 29: firstWorkDay = 2; break;
+                        case 29: FirstWorkDay = 2; break;
                     }
                 }
                 else
                 {
-                    switch (lastDayInMonth)
+                    switch (LastDayInMonth)
                     {
-                        case 27: firstWorkDay = 1; break;
+                        case 27: FirstWorkDay = 1; break;
 
-                        case 28: firstWorkDay = 2; break;
+                        case 28: FirstWorkDay = 2; break;
                     }
                 }
             }
 
             if (month != 1)
             {
-                switch (lastDayInMonth)
+                switch (LastDayInMonth)
                 {
-                    case 30: firstWorkDay = 1; break;
+                    case 30: FirstWorkDay = 1; break;
 
-                    case 31: firstWorkDay = 2; break;
+                    case 31: FirstWorkDay = 2; break;
                 }
             }
 
@@ -129,15 +83,15 @@ namespace timetableViewSpace
 
             for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
             {
-                if (j == firstWorkDay)
+                if (j == FirstWorkDay)
                 {
                     dateTimes.Add(new DateTime(year, month, j));
 
                     dateTimes.Add(new DateTime(year, month, j + 1));
 
-                    lastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
+                    LastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
 
-                    firstWorkDay += 4;
+                    FirstWorkDay += 4;
                 }
             }
 
@@ -146,77 +100,16 @@ namespace timetableViewSpace
 
         private void Calendars(int year)
         {
-            month = 1;
+            Month = 1;
 
-            cJen.MaxDate = cJen.SelectionStart = cJen.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
+            foreach (MonthCalendar item in MonthCalendars)
+            {
+                item.MaxDate = item.SelectionStart = item.SelectionEnd = new DateTime(year, Month, DateTime.DaysInMonth(year, Month));
 
-            cJen.TodayDate = new DateTime(year, month, 1);
+                item.TodayDate = new DateTime(year, Month, 1);
 
-            month++;
-
-            cFeb.MaxDate = cFeb.SelectionStart = cFeb.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cFeb.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cMarch.MaxDate = cMarch.SelectionStart = cMarch.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cMarch.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cApr.MaxDate = cApr.SelectionStart = cApr.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cApr.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cMay.MaxDate = cMay.SelectionStart = cMay.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cMay.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cJune.MaxDate = cJune.SelectionStart = cJune.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cJune.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cJuly.MaxDate = cJuly.SelectionStart = cJuly.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cJuly.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cAug.MaxDate = cAug.SelectionStart = cAug.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cAug.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cSep.MaxDate = cSep.SelectionStart = cSep.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cSep.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cOct.MaxDate = cOct.SelectionStart = cOct.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cOct.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cNov.MaxDate = cNov.SelectionStart = cNov.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cNov.TodayDate = new DateTime(year, month, 1);
-
-            month++;
-
-            cDec.MaxDate = cDec.SelectionStart = cDec.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
-
-            cDec.TodayDate = new DateTime(year, month, 1);
+                Month++;
+            }
         }
     }
 }

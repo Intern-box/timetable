@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lYear = new System.Windows.Forms.Label();
-            this.cJen = new System.Windows.Forms.MonthCalendar();
+            this.cJan = new System.Windows.Forms.MonthCalendar();
             this.cFeb = new System.Windows.Forms.MonthCalendar();
             this.cMarch = new System.Windows.Forms.MonthCalendar();
             this.cApr = new System.Windows.Forms.MonthCalendar();
@@ -59,16 +59,16 @@
             this.lYear.TabIndex = 0;
             this.lYear.Text = "Год:";
             // 
-            // cJen
+            // cJan
             // 
-            this.cJen.Enabled = false;
-            this.cJen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cJen.Location = new System.Drawing.Point(18, 41);
-            this.cJen.Name = "cJen";
-            this.cJen.ShowToday = false;
-            this.cJen.ShowTodayCircle = false;
-            this.cJen.TabIndex = 3;
-            this.cJen.TodayDate = new System.DateTime(2024, 1, 18, 0, 0, 0, 0);
+            this.cJan.Enabled = false;
+            this.cJan.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cJan.Location = new System.Drawing.Point(18, 41);
+            this.cJan.Name = "cJan";
+            this.cJan.ShowToday = false;
+            this.cJan.ShowTodayCircle = false;
+            this.cJan.TabIndex = 3;
+            this.cJan.TodayDate = new System.DateTime(2024, 1, 18, 0, 0, 0, 0);
             // 
             // cFeb
             // 
@@ -317,7 +317,7 @@
             this.Controls.Add(this.cApr);
             this.Controls.Add(this.cMarch);
             this.Controls.Add(this.cFeb);
-            this.Controls.Add(this.cJen);
+            this.Controls.Add(this.cJan);
             this.Controls.Add(this.lYear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -332,7 +332,7 @@
 
         #endregion
         private System.Windows.Forms.Label lYear;
-        private System.Windows.Forms.MonthCalendar cJen;
+        private System.Windows.Forms.MonthCalendar cJan;
         private System.Windows.Forms.MonthCalendar cFeb;
         private System.Windows.Forms.MonthCalendar cMarch;
         private System.Windows.Forms.MonthCalendar cApr;
