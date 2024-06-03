@@ -1,6 +1,6 @@
 ﻿namespace timetableViewSpace
 {
-    partial class timetableView
+    partial class TimeTableView
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -45,6 +45,8 @@
             this.tYear = new System.Windows.Forms.ComboBox();
             this.tDay = new System.Windows.Forms.ComboBox();
             this.lDay = new System.Windows.Forms.Label();
+            this.lMonth = new System.Windows.Forms.Label();
+            this.tMonth = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lYear
@@ -182,7 +184,7 @@
             // bCalc
             // 
             this.bCalc.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bCalc.Location = new System.Drawing.Point(359, 6);
+            this.bCalc.Location = new System.Drawing.Point(643, 7);
             this.bCalc.Name = "bCalc";
             this.bCalc.Size = new System.Drawing.Size(85, 23);
             this.bCalc.TabIndex = 2;
@@ -246,7 +248,7 @@
             "29",
             "30",
             "31"});
-            this.tDay.Location = new System.Drawing.Point(303, 6);
+            this.tDay.Location = new System.Drawing.Point(465, 6);
             this.tDay.Name = "tDay";
             this.tDay.Size = new System.Drawing.Size(50, 24);
             this.tDay.TabIndex = 16;
@@ -255,17 +257,51 @@
             // 
             this.lDay.AutoSize = true;
             this.lDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lDay.Location = new System.Drawing.Point(137, 9);
+            this.lDay.Location = new System.Drawing.Point(354, 9);
             this.lDay.Name = "lDay";
-            this.lDay.Size = new System.Drawing.Size(160, 16);
+            this.lDay.Size = new System.Drawing.Size(105, 16);
             this.lDay.TabIndex = 17;
-            this.lDay.Text = "Первый рабочий день:";
+            this.lDay.Text = "Рабочий день:";
             // 
-            // timetableView
+            // lMonth
+            // 
+            this.lMonth.AutoSize = true;
+            this.lMonth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lMonth.Location = new System.Drawing.Point(526, 9);
+            this.lMonth.Name = "lMonth";
+            this.lMonth.Size = new System.Drawing.Size(55, 16);
+            this.lMonth.TabIndex = 18;
+            this.lMonth.Text = "месяц:";
+            // 
+            // tMonth
+            // 
+            this.tMonth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tMonth.FormattingEnabled = true;
+            this.tMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.tMonth.Location = new System.Drawing.Point(587, 6);
+            this.tMonth.Name = "tMonth";
+            this.tMonth.Size = new System.Drawing.Size(50, 24);
+            this.tMonth.TabIndex = 19;
+            // 
+            // TimeTableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
+            this.Controls.Add(this.tMonth);
+            this.Controls.Add(this.lMonth);
             this.Controls.Add(this.lDay);
             this.Controls.Add(this.tDay);
             this.Controls.Add(this.tYear);
@@ -286,7 +322,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "timetableView";
+            this.Name = "TimeTableView";
             this.ShowIcon = false;
             this.Text = "timetable 0.0";
             this.ResumeLayout(false);
@@ -312,6 +348,8 @@
         private System.Windows.Forms.ComboBox tYear;
         private System.Windows.Forms.ComboBox tDay;
         private System.Windows.Forms.Label lDay;
+        private System.Windows.Forms.Label lMonth;
+        private System.Windows.Forms.ComboBox tMonth;
     }
 }
 

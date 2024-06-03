@@ -4,23 +4,51 @@ using System.Windows.Forms;
 
 namespace timetableViewSpace
 {
-    public partial class timetableView : Form
+    public partial class TimeTableView : Form
     {
-        int month = 1;
+        List<MonthCalendar> monthCalendars;
 
         int year;
+
+        int month;
 
         int firstWorkDay;
 
         int lastDayInMonth;
 
-        public timetableView()
+        public TimeTableView()
         {
             InitializeComponent();
 
             tYear.Text = DateTime.Now.Year.ToString();
 
             tDay.SelectedIndex = 0;
+
+            tMonth.SelectedIndex = 0;
+
+            monthCalendars.Add(cJen);
+
+            monthCalendars.Add(cFeb);
+
+            monthCalendars.Add(cMarch);
+
+            monthCalendars.Add(cApr);
+
+            monthCalendars.Add(cMay);
+
+            monthCalendars.Add(cJune);
+
+            monthCalendars.Add(cJuly);
+
+            monthCalendars.Add(cAug);
+
+            monthCalendars.Add(cSep);
+
+            monthCalendars.Add(cOct);
+
+            monthCalendars.Add(cNov);
+
+            monthCalendars.Add(cDec);
 
             Calendars(DateTime.Now.Year);
         }
@@ -29,9 +57,36 @@ namespace timetableViewSpace
         {
             year = int.Parse(tYear.Text);
 
+            month = int.Parse(tMonth.Text);
+
             firstWorkDay = int.Parse(tDay.Text);
 
-            Calendars(year);
+            switch (month)
+            {
+                case 1: cJen.BoldedDates = Calculate(year, month); break;
+
+                case 2: cFeb.BoldedDates = Calculate(year, month); break;
+
+                case 3: cMarch.BoldedDates = Calculate(year, month); break;
+
+                case 4: cApr.BoldedDates = Calculate(year, month); break;
+
+                case 5: cMay.BoldedDates = Calculate(year, month); break;
+
+                case 6: cJune.BoldedDates = Calculate(year, month); break;
+
+                case 7: cJuly.BoldedDates = Calculate(year, month); break;
+
+                case 8: cAug.BoldedDates = Calculate(year, month); break;
+
+                case 9: cSep.BoldedDates = Calculate(year, month); break;
+
+                case 10: cOct.BoldedDates = Calculate(year, month); break;
+
+                case 11: cNov.BoldedDates = Calculate(year, month); break;
+
+                case 12: cDec.BoldedDates = Calculate(year, month); break;
+            }
         }
 
         private DateTime[] Calculate(int year, int month)
@@ -91,6 +146,8 @@ namespace timetableViewSpace
 
         private void Calendars(int year)
         {
+            month = 1;
+
             cJen.MaxDate = cJen.SelectionStart = cJen.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
 
             cJen.TodayDate = new DateTime(year, month, 1);
