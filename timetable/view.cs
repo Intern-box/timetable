@@ -37,63 +37,67 @@ namespace timetableViewSpace
 
             FirstWorkDay = int.Parse(tDay.Text);
 
-            for (int i = Month - 1; i < tMonth.Items.Count; i++)
-            {
-                MonthCalendars[i].BoldedDates = Calculate(Year, Month); Month++;
-            }
+            for (int i = Month - 1; i < tMonth.Items.Count; i++) { MonthCalendars[i].BoldedDates = Calculate(Year, Month); Month++; }
         }
 
         private DateTime[] Calculate(int year, int month)
         {
-            LastDayInMonth = DateTime.DaysInMonth(year, month);
+            //LastDayInMonth = DateTime.DaysInMonth(year, month);
 
-            if (month == 2)
-            {
-                if (DateTime.IsLeapYear(year))
-                {
-                    switch (LastDayInMonth)
-                    {
-                        case 28: FirstWorkDay = 1; break;
+            //if (month == 2)
+            //{
+            //    if (DateTime.IsLeapYear(year))
+            //    {
+            //        switch (LastDayInMonth)
+            //        {
+            //            case 28: FirstWorkDay = 1; break;
 
-                        case 29: FirstWorkDay = 2; break;
-                    }
-                }
-                else
-                {
-                    switch (LastDayInMonth)
-                    {
-                        case 27: FirstWorkDay = 1; break;
+            //            case 29: FirstWorkDay = 2; break;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        switch (LastDayInMonth)
+            //        {
+            //            case 27: FirstWorkDay = 1; break;
 
-                        case 28: FirstWorkDay = 2; break;
-                    }
-                }
-            }
+            //            case 28: FirstWorkDay = 2; break;
+            //        }
+            //    }
+            //}
 
-            if (month != 1)
-            {
-                switch (LastDayInMonth)
-                {
-                    case 30: FirstWorkDay = 1; break;
+            //if (month != 1)
+            //{
+            //    switch (LastDayInMonth)
+            //    {
+            //        case 30: FirstWorkDay = 1; break;
 
-                    case 31: FirstWorkDay = 2; break;
-                }
-            }
+            //        case 31: FirstWorkDay = 2; break;
+            //    }
+            //}
+
+            byte mark = 0;
 
             List<DateTime> dateTimes = new List<DateTime>();
 
-            for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
+            while (year == int.Parse(tYear.ToString()) & month <= int.Parse(tMonth.ToString()) & FirstWorkDay < 32)
             {
-                if (j == FirstWorkDay)
-                {
-                    dateTimes.Add(new DateTime(year, month, j));
-
-                    dateTimes.Add(new DateTime(year, month, j + 1));
-
-                    LastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
-
-                    FirstWorkDay += 4;
-                }
+                
             }
+
+            //for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
+            //{
+            //    if (j == FirstWorkDay)
+            //    {
+            //        dateTimes.Add(new DateTime(year, month, j));
+
+            //        dateTimes.Add(new DateTime(year, month, j + 1));
+
+            //        LastDayInMonth = dateTimes[dateTimes.Count - 1].Day;
+
+            //        FirstWorkDay += 4;
+            //    }
+            //}
 
             return dateTimes.ToArray();
         }
