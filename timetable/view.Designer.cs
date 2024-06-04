@@ -1,6 +1,6 @@
 ﻿namespace TimetableViewSpace
 {
-    partial class TimeTableView
+    partial class TimetableView
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -187,7 +187,7 @@
             this.bCalc.Location = new System.Drawing.Point(643, 7);
             this.bCalc.Name = "bCalc";
             this.bCalc.Size = new System.Drawing.Size(85, 23);
-            this.bCalc.TabIndex = 2;
+            this.bCalc.TabIndex = 4;
             this.bCalc.Text = "посчитать";
             this.bCalc.UseVisualStyleBackColor = true;
             this.bCalc.Click += new System.EventHandler(this.bCalc_Click);
@@ -251,7 +251,7 @@
             this.tDay.Location = new System.Drawing.Point(465, 6);
             this.tDay.Name = "tDay";
             this.tDay.Size = new System.Drawing.Size(50, 24);
-            this.tDay.TabIndex = 16;
+            this.tDay.TabIndex = 3;
             // 
             // lDay
             // 
@@ -293,9 +293,9 @@
             this.tMonth.Location = new System.Drawing.Point(587, 6);
             this.tMonth.Name = "tMonth";
             this.tMonth.Size = new System.Drawing.Size(50, 24);
-            this.tMonth.TabIndex = 19;
+            this.tMonth.TabIndex = 3;
             // 
-            // TimeTableView
+            // TimetableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,7 +322,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TimeTableView";
+            this.Name = "TimetableView";
             this.ShowIcon = false;
             this.Text = "timetable 0.0";
             this.ResumeLayout(false);
@@ -332,24 +332,24 @@
 
         #endregion
         private System.Windows.Forms.Label lYear;
-        private System.Windows.Forms.MonthCalendar cJan;
-        private System.Windows.Forms.MonthCalendar cFeb;
-        private System.Windows.Forms.MonthCalendar cMarch;
-        private System.Windows.Forms.MonthCalendar cApr;
-        private System.Windows.Forms.MonthCalendar cAug;
-        private System.Windows.Forms.MonthCalendar cJuly;
-        private System.Windows.Forms.MonthCalendar cJune;
-        private System.Windows.Forms.MonthCalendar cMay;
-        private System.Windows.Forms.MonthCalendar cDec;
-        private System.Windows.Forms.MonthCalendar cNov;
-        private System.Windows.Forms.MonthCalendar cOct;
-        private System.Windows.Forms.MonthCalendar cSep;
         private System.Windows.Forms.Button bCalc;
-        private System.Windows.Forms.ComboBox tYear;
-        private System.Windows.Forms.ComboBox tDay;
         private System.Windows.Forms.Label lDay;
         private System.Windows.Forms.Label lMonth;
-        private System.Windows.Forms.ComboBox tMonth;
+        public System.Windows.Forms.ComboBox tYear;
+        public System.Windows.Forms.ComboBox tDay;
+        public System.Windows.Forms.ComboBox tMonth;
+        public System.Windows.Forms.MonthCalendar cJan;
+        public System.Windows.Forms.MonthCalendar cFeb;
+        public System.Windows.Forms.MonthCalendar cMarch;
+        public System.Windows.Forms.MonthCalendar cApr;
+        public System.Windows.Forms.MonthCalendar cAug;
+        public System.Windows.Forms.MonthCalendar cJuly;
+        public System.Windows.Forms.MonthCalendar cJune;
+        public System.Windows.Forms.MonthCalendar cMay;
+        public System.Windows.Forms.MonthCalendar cDec;
+        public System.Windows.Forms.MonthCalendar cNov;
+        public System.Windows.Forms.MonthCalendar cOct;
+        public System.Windows.Forms.MonthCalendar cSep;
     }
 }
 

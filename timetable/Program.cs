@@ -14,7 +14,7 @@ namespace Timetable
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TimeTableView());
+            Application.Run(new TimetableView());
         }
     }
 }
