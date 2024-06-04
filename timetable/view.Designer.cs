@@ -1,4 +1,4 @@
-﻿namespace timetableViewSpace
+﻿namespace TimetableViewSpace
 {
     partial class TimeTableView
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace timetableViewSpace
+namespace TimetableViewSpace
 {
     public partial class TimeTableView : Form
     {

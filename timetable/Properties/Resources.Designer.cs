@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace timetable.Properties
+namespace Timetable.Properties
 {
 
 

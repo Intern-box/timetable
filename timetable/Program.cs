@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using timetableViewSpace;
+using TimetableViewSpace;
 
-namespace timetable
+namespace Timetable
 {
     internal static class Program
     {
