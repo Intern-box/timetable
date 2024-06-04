@@ -45,11 +45,11 @@ namespace TimetablePresenterSpace
 
             for (int i = timetableModel.Month - 1; i < timetableView.tMonth.Items.Count; i++)
             {
-                timetableModel.MonthCalendars[i].BoldedDates = Calculate(timetableModel.Year, timetableModel.Month); timetableModel.Month++;
+                timetableModel.MonthCalendars[i].BoldedDates = Calculate(timetableModel.Year, timetableModel.Month, timetableModel.FirstWorkDay); timetableModel.Month++;
             }
         }
 
-        public DateTime[] Calculate(int year, int month)
+        public DateTime[] Calculate(int year, int month, int day)
         {
             //LastDayInMonth = DateTime.DaysInMonth(year, month);
 
@@ -85,13 +85,24 @@ namespace TimetablePresenterSpace
             //    }
             //}
 
-            byte mark;
-
             List<DateTime> dateTimes = new List<DateTime>();
 
-            while (year == int.Parse(timetableView.tYear.Text) & month <= int.Parse(timetableView.tMonth.Text) & timetableModel.FirstWorkDay < 32)
+            while (year == int.Parse(timetableView.tYear.Text) & month <= int.Parse(timetableView.tMonth.Text) & day < 32)
             {
+                dateTimes.Add(new DateTime(year, month, day));
 
+                if (day < DateTime.DaysInMonth(year, month))
+                {
+                    dateTimes.Add(new DateTime(year, month, ++day));
+                }
+                else
+                {
+                    month++; day = 1;
+
+                    dateTimes.Add(new DateTime(year, month, day));
+                }
+
+                for (int i = 0; i < 3; i++) { if (day < DateTime.DaysInMonth(year, month)) { day++; } else { month++; day = 1; } }
             }
 
             //for (int j = 1; j < DateTime.DaysInMonth(year, month); j++)
