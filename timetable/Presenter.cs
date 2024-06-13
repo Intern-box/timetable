@@ -43,9 +43,24 @@ namespace TimetablePresenterSpace
 
             timetableModel.FirstWorkDay = int.Parse(timetableView.tDay.Text);
 
-            for (int i = timetableModel.Month - 1; i < timetableView.tMonth.Items.Count; i++)
+            DateTime[] dateTimes;
+
+            for (int i = timetableModel.Month - 1; i < 12; i++)
             {
-                timetableModel.MonthCalendars[i].BoldedDates = Calculate(timetableModel.Year, timetableModel.Month, timetableModel.FirstWorkDay); timetableModel.Month++;
+                dateTimes = Calculate(timetableModel.Year, timetableModel.Month, timetableModel.FirstWorkDay);
+
+                timetableModel.MonthCalendars[i].BoldedDates = dateTimes;
+
+                switch (DateTime.DaysInMonth(timetableModel.Year, timetableModel.Month) - dateTimes[dateTimes.Length - 1].Day)
+                {
+                    case 0: timetableModel.FirstWorkDay = 3; break;
+
+                    case 1: timetableModel.FirstWorkDay = 2; break;
+
+                    case 2: timetableModel.FirstWorkDay = 1; break;
+                }
+
+                timetableModel.Month++;
             }
         }
 
@@ -53,26 +68,29 @@ namespace TimetablePresenterSpace
         {
             List<DateTime> dateTimes = new List<DateTime>();
 
-            while (month < 13)
+            if (month < 13)
             {
-                dateTimes.Add(new DateTime(year, month, day));
-
-                if (day < DateTime.DaysInMonth(year, month))
+                while (day < DateTime.DaysInMonth(year, month))
                 {
-                    dateTimes.Add(new DateTime(year, month, ++day));
-                }
-                else
-                {
-                    if (month == 12) { return dateTimes.ToArray(); } else { month++; day = 1; }
-
                     dateTimes.Add(new DateTime(year, month, day));
-                }
-
-                for (int i = 0; i < 3; i++)
-                {
-                    if (day < DateTime.DaysInMonth(year, month)) { day++; }
                     
-                    else { if (month == 12) { return dateTimes.ToArray(); } else { month++; day = 1; } }
+                    day++;
+
+                    if (day < DateTime.DaysInMonth(year, month)) { dateTimes.Add(new DateTime(year, month, day)); }
+
+                    else { return dateTimes.ToArray(); }
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        day++;
+
+                        if (day >= DateTime.DaysInMonth(year, month))
+                        {
+                            if (i == 2) { dateTimes.Add(new DateTime(year, month, day)); }
+
+                            break;
+                        }
+                    }
                 }
             }
 

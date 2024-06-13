@@ -184,7 +184,7 @@
             // bCalc
             // 
             this.bCalc.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bCalc.Location = new System.Drawing.Point(643, 7);
+            this.bCalc.Location = new System.Drawing.Point(643, 6);
             this.bCalc.Name = "bCalc";
             this.bCalc.Size = new System.Drawing.Size(85, 23);
             this.bCalc.TabIndex = 4;
@@ -248,7 +248,7 @@
             "29",
             "30",
             "31"});
-            this.tDay.Location = new System.Drawing.Point(465, 6);
+            this.tDay.Location = new System.Drawing.Point(587, 6);
             this.tDay.Name = "tDay";
             this.tDay.Size = new System.Drawing.Size(50, 24);
             this.tDay.TabIndex = 3;
@@ -257,21 +257,21 @@
             // 
             this.lDay.AutoSize = true;
             this.lDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lDay.Location = new System.Drawing.Point(354, 9);
+            this.lDay.Location = new System.Drawing.Point(535, 10);
             this.lDay.Name = "lDay";
-            this.lDay.Size = new System.Drawing.Size(105, 16);
+            this.lDay.Size = new System.Drawing.Size(46, 16);
             this.lDay.TabIndex = 17;
-            this.lDay.Text = "Рабочий день:";
+            this.lDay.Text = "День:";
             // 
             // lMonth
             // 
             this.lMonth.AutoSize = true;
             this.lMonth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lMonth.Location = new System.Drawing.Point(526, 9);
+            this.lMonth.Location = new System.Drawing.Point(416, 10);
             this.lMonth.Name = "lMonth";
-            this.lMonth.Size = new System.Drawing.Size(55, 16);
+            this.lMonth.Size = new System.Drawing.Size(57, 16);
             this.lMonth.TabIndex = 18;
-            this.lMonth.Text = "месяц:";
+            this.lMonth.Text = "Месяц:";
             // 
             // tMonth
             // 
@@ -290,7 +290,7 @@
             "10",
             "11",
             "12"});
-            this.tMonth.Location = new System.Drawing.Point(587, 6);
+            this.tMonth.Location = new System.Drawing.Point(479, 7);
             this.tMonth.Name = "tMonth";
             this.tMonth.Size = new System.Drawing.Size(50, 24);
             this.tMonth.TabIndex = 3;
