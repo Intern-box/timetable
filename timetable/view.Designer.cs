@@ -196,58 +196,16 @@
             // 
             this.tYear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tYear.FormattingEnabled = true;
-            this.tYear.Items.AddRange(new object[] {
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032"});
             this.tYear.Location = new System.Drawing.Point(54, 6);
             this.tYear.Name = "tYear";
             this.tYear.Size = new System.Drawing.Size(77, 24);
             this.tYear.TabIndex = 1;
+            this.tYear.SelectedIndexChanged += new System.EventHandler(this.tYear_SelectedIndexChanged);
             // 
             // tDay
             // 
             this.tDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tDay.FormattingEnabled = true;
-            this.tDay.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
             this.tDay.Location = new System.Drawing.Point(587, 6);
             this.tDay.Name = "tDay";
             this.tDay.Size = new System.Drawing.Size(50, 24);

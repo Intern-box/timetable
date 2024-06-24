@@ -17,22 +17,6 @@ namespace TimetablePresenterSpace
             this.timetableView = timetableView;
 
             timetableModel = new TimetableModel();
-
-            timetableModel.MonthCalendars = new List<MonthCalendar>()
-            {
-                timetableView.cJan,
-                timetableView.cFeb,
-                timetableView.cMarch,
-                timetableView.cApr,
-                timetableView.cMay,
-                timetableView.cJune,
-                timetableView.cJuly,
-                timetableView.cAug,
-                timetableView.cSep,
-                timetableView.cOct,
-                timetableView.cNov,
-                timetableView.cDec
-            };
         }
 
         public void ClickCalculate()
@@ -60,23 +44,30 @@ namespace TimetablePresenterSpace
                     case 2: timetableModel.FirstWorkDay = 1; break;
                 }
 
+                if (dateTimes.Length % 2 == 1) { timetableModel.FirstWorkDay = 1; }
+
                 timetableModel.Month++;
             }
         }
 
         public DateTime[] Calculate(int year, int month, int day)
         {
-            List<DateTime> dateTimes = new List<DateTime>();
+            List<DateTime> dateTimes = new List<DateTime>() { new DateTime(year, month, day) };
+
+            day++;
 
             if (month < 13)
             {
                 while (day < DateTime.DaysInMonth(year, month))
                 {
                     dateTimes.Add(new DateTime(year, month, day));
-                    
+
                     day++;
 
-                    if (day < DateTime.DaysInMonth(year, month)) { dateTimes.Add(new DateTime(year, month, day)); }
+                    if (day < DateTime.DaysInMonth(year, month))
+                    {
+                        dateTimes.Add(new DateTime(year, month, day));
+                    }
 
                     else { return dateTimes.ToArray(); }
 
@@ -84,8 +75,10 @@ namespace TimetablePresenterSpace
                     {
                         day++;
 
-                        if (day >= DateTime.DaysInMonth(year, month))
+                        if (day == DateTime.DaysInMonth(year, month))
                         {
+                            if (i == 1) { return dateTimes.ToArray(); }
+
                             if (i == 2) { dateTimes.Add(new DateTime(year, month, day)); }
 
                             break;
@@ -99,15 +92,31 @@ namespace TimetablePresenterSpace
 
         public void Calendars(int year)
         {
-            timetableModel.Month = 1;
+            timetableModel.MonthCalendars = new List<MonthCalendar>()
+            {
+                timetableView.cJan,
+                timetableView.cFeb,
+                timetableView.cMarch,
+                timetableView.cApr,
+                timetableView.cMay,
+                timetableView.cJune,
+                timetableView.cJuly,
+                timetableView.cAug,
+                timetableView.cSep,
+                timetableView.cOct,
+                timetableView.cNov,
+                timetableView.cDec
+            };
+
+            int month = 1;
 
             foreach (MonthCalendar item in timetableModel.MonthCalendars)
             {
-                item.MaxDate = item.SelectionStart = item.SelectionEnd = new DateTime(year, timetableModel.Month, DateTime.DaysInMonth(year, timetableModel.Month));
+                item.SelectionStart = item.SelectionEnd = new DateTime(year, month, DateTime.DaysInMonth(year, month));
 
-                item.TodayDate = new DateTime(year, timetableModel.Month, 1);
+                item.TodayDate = new DateTime(year, month, 1);
 
-                timetableModel.Month++;
+                month++;
             }
         }
     }
