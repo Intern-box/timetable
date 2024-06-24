@@ -70,7 +70,7 @@ namespace TimetablePresenterSpace
 
             if (month < 13)
             {
-                while (day < DateTime.DaysInMonth(year, month))
+                while (day <= DateTime.DaysInMonth(year, month))
                 {
                     dateTimes.Add(new DateTime(year, month, day)); day++;
 
