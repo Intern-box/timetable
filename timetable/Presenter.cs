@@ -43,42 +43,32 @@ namespace TimetablePresenterSpace
 
             int day = int.Parse(timetableView.tDay.Text);
 
+            bool mode = false;
+
             DateTime[] dateTimes;
 
             for (int i = month - 1; i < 12; i++)
             {
-                dateTimes = Calculate(year, month, day);
+                dateTimes = Calculate(year, month, day, mode); mode = false;
 
                 timetableModel.MonthCalendars[i].BoldedDates = dateTimes;
 
-                if (dateTimes.Length % 2 == 1)
+                switch (DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day)
                 {
-                    if (DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day != 0)
-                    {
-                        day = DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day; // Только первая дата
-                    }
-                    else
-                    {
-                        day = 1;
-                    }
-                }
-                else
-                {
-                    switch (DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day)
-                    {
-                        case 0: day = 3; break;
+                    case 0: if (dateTimes.Length % 2 == 0) { day = 3; } else { day = 1; mode = true; } break;
 
-                        case 1: day = 2; break;
+                    case 1: if (dateTimes.Length % 2 == 0) { day = 2; } else { day = 2; } break;
 
-                        case 2: day = 1; break;
-                    }
+                    case 2: if (dateTimes.Length % 2 == 0) { day = 1; } else { day = 1; } break;
+
+                    case 30: day = 4; month--; break;
                 }
 
                 month++;
             }
         }
 
-        public DateTime[] Calculate(int year, int month, int day)
+        public DateTime[] Calculate(int year, int month, int day, bool mode = false)
         {
             List<DateTime> dateTimes = new List<DateTime>();
 
@@ -86,13 +76,22 @@ namespace TimetablePresenterSpace
             {
                 while (day <= DateTime.DaysInMonth(year, month))
                 {
-                    dateTimes.Add(new DateTime(year, month, day)); day++;
+                    if (!mode)
+                    {
+                        dateTimes.Add(new DateTime(year, month, day)); day++;
 
-                    if (day < DateTime.DaysInMonth(year, month)) { dateTimes.Add(new DateTime(year, month, day)); }
+                        if (day <= DateTime.DaysInMonth(year, month)) { dateTimes.Add(new DateTime(year, month, day)); } // <=
 
-                    else { return dateTimes.ToArray(); }
-                    
-                    day += 3;
+                        else { return dateTimes.ToArray(); }
+
+                        day += 3;
+                    }
+                    else
+                    {
+                        dateTimes.Add(new DateTime(year, month, day));
+
+                        day += 3; mode = false;
+                    }
                 }
             }
 
