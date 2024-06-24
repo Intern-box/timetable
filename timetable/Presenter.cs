@@ -37,30 +37,44 @@ namespace TimetablePresenterSpace
 
         public void ClickCalculate()
         {
-            timetableModel.Year = int.Parse(timetableView.tYear.Text);
+            int year = int.Parse(timetableView.tYear.Text);
 
-            timetableModel.Month = int.Parse(timetableView.tMonth.Text);
+            int month = int.Parse(timetableView.tMonth.Text);
 
-            timetableModel.FirstWorkDay = int.Parse(timetableView.tDay.Text);
+            int day = int.Parse(timetableView.tDay.Text);
 
             DateTime[] dateTimes;
 
-            for (int i = timetableModel.Month - 1; i < 12; i++)
+            for (int i = month - 1; i < 12; i++)
             {
-                dateTimes = Calculate(timetableModel.Year, timetableModel.Month, timetableModel.FirstWorkDay);
+                dateTimes = Calculate(year, month, day);
 
                 timetableModel.MonthCalendars[i].BoldedDates = dateTimes;
 
-                switch (DateTime.DaysInMonth(timetableModel.Year, timetableModel.Month) - dateTimes[dateTimes.Length - 1].Day)
+                if (dateTimes.Length % 2 == 1)
                 {
-                    case 0: timetableModel.FirstWorkDay = 3; break;
+                    if (DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day != 0)
+                    {
+                        day = DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day; // Только первая дата
+                    }
+                    else
+                    {
+                        day = 1;
+                    }
+                }
+                else
+                {
+                    switch (DateTime.DaysInMonth(year, month) - dateTimes[dateTimes.Length - 1].Day)
+                    {
+                        case 0: day = 3; break;
 
-                    case 1: timetableModel.FirstWorkDay = 2; break;
+                        case 1: day = 2; break;
 
-                    case 2: timetableModel.FirstWorkDay = 1; break;
+                        case 2: day = 1; break;
+                    }
                 }
 
-                timetableModel.Month++;
+                month++;
             }
         }
 
@@ -76,7 +90,9 @@ namespace TimetablePresenterSpace
 
                     if (day < DateTime.DaysInMonth(year, month)) { dateTimes.Add(new DateTime(year, month, day)); }
 
-                    else { return dateTimes.ToArray(); } day += 3;
+                    else { return dateTimes.ToArray(); }
+                    
+                    day += 3;
                 }
             }
 
