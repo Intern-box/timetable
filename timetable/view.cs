@@ -38,14 +38,19 @@ namespace TimetableViewSpace
             // Месяц
 
             tMonth.SelectedItem = DateTime.Now.Month.ToString();
+        }
 
+        private void tYear_SelectedIndexChanged(object sender, EventArgs e) { timetablePresenter.Calendars(int.Parse(tYear.Text)); }
+
+        private void tMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
             // Дни
+
+            tDay.Items.Clear();
 
             for (int i = 0; i < DateTime.DaysInMonth(int.Parse(tYear.Text), int.Parse(tMonth.Text)); i++) { tDay.Items.Add(i + 1); }
 
             tDay.Text = DateTime.Now.Day.ToString();
         }
-
-        private void tYear_SelectedIndexChanged(object sender, EventArgs e) { timetablePresenter.Calendars(int.Parse(tYear.Text)); }
     }
 }

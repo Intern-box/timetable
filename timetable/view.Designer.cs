@@ -252,6 +252,7 @@
             this.tMonth.Name = "tMonth";
             this.tMonth.Size = new System.Drawing.Size(50, 24);
             this.tMonth.TabIndex = 3;
+            this.tMonth.SelectedIndexChanged += new System.EventHandler(this.tMonth_SelectedIndexChanged);
             // 
             // TimetableView
             // 
