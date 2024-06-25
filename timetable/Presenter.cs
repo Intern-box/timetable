@@ -59,7 +59,7 @@ namespace TimetablePresenterSpace
 
                     case 1: if (dateTimes.Length % 2 == 0) { day = 2; } else { day = 2; } break;
 
-                    case 2: if (dateTimes.Length % 2 == 0) { day = 1; } else { day = 1; } break;
+                    case 2: day = 1; break;
 
                     case 30: day = 4; month--; break;
                 }

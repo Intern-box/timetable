@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 579);
+            this.ClientSize = new System.Drawing.Size(747, 587);
             this.Controls.Add(this.tMonth);
             this.Controls.Add(this.lMonth);
             this.Controls.Add(this.lDay);
@@ -279,11 +279,9 @@
             this.Controls.Add(this.cJan);
             this.Controls.Add(this.lYear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "TimetableView";
             this.ShowIcon = false;
-            this.Text = "timetable 0.0";
+            this.Text = "timetable 0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

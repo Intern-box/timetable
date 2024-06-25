@@ -14,6 +14,12 @@ namespace TimetableViewSpace
 
             timetablePresenter = new TimetablePresenter(this);
 
+            //cJan.Font = new System.Drawing.Font("Verdana", 10); // Стиль и размер шрифта
+            //cJan.ForeColor = System.Drawing.Color.Black; // Цвет шрифта
+            //cJan.TitleBackColor = System.Drawing.Color.White; // Фон заголовка
+            //cJan.TitleForeColor = System.Drawing.Color.Black; // Цвет заголовка
+            //cJan.ShowTodayCircle = true;
+
             Start();
         }
 
