@@ -7,7 +7,6 @@ namespace TimetableViewSpace
     public partial class TimetableView : Form
     {
         TimetablePresenter timetablePresenter;
-
         public TimetableView()
         {
             InitializeComponent();
@@ -22,8 +21,6 @@ namespace TimetableViewSpace
 
             Start();
         }
-
-        private void bCalc_Click(object sender, EventArgs e) { timetablePresenter.ClickCalculate(); }
 
         private void Start()
         {
@@ -46,11 +43,9 @@ namespace TimetableViewSpace
             tMonth.SelectedItem = DateTime.Now.Month.ToString();
         }
 
-        private void tYear_SelectedIndexChanged(object sender, EventArgs e) { timetablePresenter.Calendars(int.Parse(tYear.Text)); }
-
         private void tMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Дни
+            // День
 
             tDay.Items.Clear();
 
@@ -58,5 +53,13 @@ namespace TimetableViewSpace
 
             tDay.Text = DateTime.Now.Day.ToString();
         }
+
+        private void tYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Calendar.SelectionStart = Calendar.SelectionEnd =
+                new DateTime(int.Parse(tYear.Text), 1, DateTime.DaysInMonth(int.Parse(tYear.Text), 1));
+        }
+
+        private void bCalc_Click(object sender, EventArgs e) { timetablePresenter.ClickCalculate(); }
     }
 }
