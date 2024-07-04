@@ -24,15 +24,6 @@ namespace TimetablePresenterSpace
             {
                 if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
 
-                else
-                {
-                    day = 1; month++;
-
-                    if (month > 12) { return listDateTime.ToArray(); }
-
-                    continue;
-                }
-
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
@@ -49,13 +40,6 @@ namespace TimetablePresenterSpace
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { day++; }
-
-                else
-                {
-                    day = 1; month++;
-
-                    if (month > 12) { return listDateTime.ToArray(); }
-                }
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
