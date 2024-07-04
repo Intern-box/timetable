@@ -30,16 +30,49 @@ namespace TimetablePresenterSpace
 
                 else
                 {
-                    day = 1; month++;
+                    if (day == 31)
+                    {
+                        day = 1; month++;
 
-                    if (month > 12) { return listDateTime.ToArray(); }
+                        listDateTime.Add(new DateTime(year, month, day)); day++;
 
-                    continue;
+                        if (month > 12) { return listDateTime.ToArray(); }
+                    }
+                    else
+                    {
+                        day = 1; month++;
+
+                        if (month > 12) { return listDateTime.ToArray(); }
+
+                        continue;
+                    }
                 }
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { day++; }
+
+                else
+                {
+                    if (day == 30)
+                    {
+                        day = 2; month++;
+
+                        if (month > 12) { return listDateTime.ToArray(); }
+                    }
+                    if (day == 31)
+                    {
+                        day = 3; month++;
+
+                        if (month > 12) { return listDateTime.ToArray(); }
+                    }
+                    else
+                    {
+                        day = 2; month++;
+
+                        if (month > 12) { return listDateTime.ToArray(); }
+                    }
+                }
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

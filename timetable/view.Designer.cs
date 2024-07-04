@@ -66,7 +66,7 @@
             // bCalc
             // 
             this.bCalc.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bCalc.Location = new System.Drawing.Point(430, 6);
+            this.bCalc.Location = new System.Drawing.Point(430, 8);
             this.bCalc.Name = "bCalc";
             this.bCalc.Size = new System.Drawing.Size(85, 23);
             this.bCalc.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.lDay.AutoSize = true;
             this.lDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lDay.Location = new System.Drawing.Point(322, 10);
+            this.lDay.Location = new System.Drawing.Point(322, 9);
             this.lDay.Name = "lDay";
             this.lDay.Size = new System.Drawing.Size(46, 16);
             this.lDay.TabIndex = 17;
@@ -107,7 +107,7 @@
             // 
             this.lMonth.AutoSize = true;
             this.lMonth.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lMonth.Location = new System.Drawing.Point(203, 10);
+            this.lMonth.Location = new System.Drawing.Point(203, 9);
             this.lMonth.Name = "lMonth";
             this.lMonth.Size = new System.Drawing.Size(57, 16);
             this.lMonth.TabIndex = 18;
@@ -130,7 +130,7 @@
             "10",
             "11",
             "12"});
-            this.tMonth.Location = new System.Drawing.Point(266, 6);
+            this.tMonth.Location = new System.Drawing.Point(266, 7);
             this.tMonth.Name = "tMonth";
             this.tMonth.Size = new System.Drawing.Size(50, 24);
             this.tMonth.TabIndex = 3;
