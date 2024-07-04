@@ -24,28 +24,26 @@ namespace TimetablePresenterSpace
             {
                 if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
 
+                else
+                {
+                    day = 1; month++;
+
+                    if (month > 12) { return listDateTime.ToArray(); }
+
+                    listDateTime.Add(new DateTime(year, month, day)); day++;
+                }
+
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
 
                 else
                 {
-                    if (day == 31)
-                    {
-                        day = 1; month++;
+                    day = 1; month++;
 
-                        listDateTime.Add(new DateTime(year, month, day)); day++;
+                    if (month > 12) { return listDateTime.ToArray(); }
 
-                        if (month > 12) { return listDateTime.ToArray(); }
-                    }
-                    else
-                    {
-                        day = 1; month++;
-
-                        if (month > 12) { return listDateTime.ToArray(); }
-
-                        continue;
-                    }
+                    listDateTime.Add(new DateTime(year, month, day)); day++;
                 }
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,24 +52,18 @@ namespace TimetablePresenterSpace
 
                 else
                 {
-                    if (day == 30)
+                    switch (day)
                     {
-                        day = 2; month++;
+                        case 30: day = 3; break;
 
-                        if (month > 12) { return listDateTime.ToArray(); }
-                    }
-                    if (day == 31)
-                    {
-                        day = 3; month++;
+                        case 31: day = 2; break;
 
-                        if (month > 12) { return listDateTime.ToArray(); }
+                        default: day = 2; break;
                     }
-                    else
-                    {
-                        day = 2; month++;
 
-                        if (month > 12) { return listDateTime.ToArray(); }
-                    }
+                    month++;
+
+                    if (month > 12) { return listDateTime.ToArray(); }
                 }
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
