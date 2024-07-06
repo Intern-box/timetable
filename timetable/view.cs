@@ -6,7 +6,7 @@ namespace TimetableViewSpace
 {
     public partial class TimetableView : Form
     {
-        TimetablePresenter timetablePresenter;
+        readonly TimetablePresenter timetablePresenter;
         public TimetableView()
         {
             InitializeComponent();
@@ -26,40 +26,41 @@ namespace TimetableViewSpace
         {
             // Год
 
-            tYear.Items.Add(DateTime.Now.Year - 2);
+            TYear.Items.Add(DateTime.Now.Year - 2);
 
-            tYear.Items.Add(DateTime.Now.Year - 1);
+            TYear.Items.Add(DateTime.Now.Year - 1);
 
-            tYear.Items.Add(DateTime.Now.Year);
+            TYear.Items.Add(DateTime.Now.Year);
 
-            tYear.Items.Add(DateTime.Now.Year + 1);
+            TYear.Items.Add(DateTime.Now.Year + 1);
 
-            tYear.Items.Add(DateTime.Now.Year + 2);
+            TYear.Items.Add(DateTime.Now.Year + 2);
 
-            tYear.Text = DateTime.Now.Year.ToString();
+            TYear.Items.Add(DateTime.Now.Year + 3);
+
+            TYear.Text = DateTime.Now.Year.ToString();
 
             // Месяц
 
-            tMonth.SelectedItem = DateTime.Now.Month.ToString();
+            TMonth.SelectedItem = DateTime.Now.Month.ToString();
         }
 
-        private void tMonth_SelectedIndexChanged(object sender, EventArgs e)
+        private void TMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             // День
 
-            tDay.Items.Clear();
+            TDay.Items.Clear();
 
-            for (int i = 0; i < DateTime.DaysInMonth(int.Parse(tYear.Text), int.Parse(tMonth.Text)); i++) { tDay.Items.Add(i + 1); }
+            for (int i = 0; i < DateTime.DaysInMonth(int.Parse(TYear.Text), int.Parse(TMonth.Text)); i++) { TDay.Items.Add(i + 1); }
 
-            tDay.Text = DateTime.Now.Day.ToString();
+            TDay.Text = DateTime.Now.Day.ToString();
         }
 
-        private void tYear_SelectedIndexChanged(object sender, EventArgs e)
+        private void TYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Calendar.SelectionStart = Calendar.SelectionEnd =
-                new DateTime(int.Parse(tYear.Text), 1, DateTime.DaysInMonth(int.Parse(tYear.Text), 1));
+            Calendar.SelectionStart = Calendar.SelectionEnd = new DateTime(int.Parse(TYear.Text), 1, DateTime.DaysInMonth(int.Parse(TYear.Text), 1));
         }
 
-        private void bCalc_Click(object sender, EventArgs e) { timetablePresenter.ClickCalculate(); }
+        private void BCalc_Click(object sender, EventArgs e) { timetablePresenter.ClickCalculate(); }
     }
 }

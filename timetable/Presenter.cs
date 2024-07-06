@@ -6,14 +6,14 @@ namespace TimetablePresenterSpace
 {
     public class TimetablePresenter
     {
-        TimetableView timetableView;
+        readonly TimetableView timetableView;
 
         public TimetablePresenter(TimetableView timetableView) { this.timetableView = timetableView; }
 
         public void ClickCalculate()
         {
             timetableView.Calendar.BoldedDates =
-                Calculate(int.Parse(timetableView.tYear.Text), int.Parse(timetableView.tMonth.Text), int.Parse(timetableView.tDay.Text));
+                Calculate(int.Parse(timetableView.TYear.Text), int.Parse(timetableView.TMonth.Text), int.Parse(timetableView.TDay.Text));
         }
 
         public DateTime[] Calculate(int year, int month, int day)
@@ -22,31 +22,19 @@ namespace TimetablePresenterSpace
 
             while (month < 13)
             {
-                if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
-
-                else
+                for (int i = 0; i < 2; i++)
                 {
-                    day = 1; month++;
+                    if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
 
-                    if (month > 12) { return listDateTime.ToArray(); }
+                    else
+                    {
+                        day = 1; month++;
 
-                    listDateTime.Add(new DateTime(year, month, day)); day++;
+                        if (month > 12) { return listDateTime.ToArray(); }
+
+                        listDateTime.Add(new DateTime(year, month, day)); day++;
+                    }
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                if (day <= DateTime.DaysInMonth(year, month)) { listDateTime.Add(new DateTime(year, month, day)); day++; }
-
-                else
-                {
-                    day = 1; month++;
-
-                    if (month > 12) { return listDateTime.ToArray(); }
-
-                    listDateTime.Add(new DateTime(year, month, day)); day++;
-                }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { day++; }
 
@@ -56,8 +44,6 @@ namespace TimetablePresenterSpace
                     {
                         case 30: day = 3; break;
 
-                        case 31: day = 2; break;
-
                         default: day = 2; break;
                     }
 
@@ -65,8 +51,6 @@ namespace TimetablePresenterSpace
 
                     if (month > 12) { return listDateTime.ToArray(); }
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if (day <= DateTime.DaysInMonth(year, month)) { day++; }
 
